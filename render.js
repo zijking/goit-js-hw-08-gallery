@@ -40,6 +40,7 @@ galleryEl.append(...galleryLiEl);
 
 galleryEl.addEventListener("click", openModal);
 btnCloseModal.addEventListener("click", closeModal);
+// modalWindow.addEventListener("click", closeModal);
 
 function openModal(evt) {
   if (evt.target.nodeName !== "IMG") {
@@ -51,7 +52,8 @@ function openModal(evt) {
   setSrcImg(evt.target);
 }
 
-function closeModal(evt) {
+function closeModal(e) {
+  console.log(e.target);
   modalWindow.classList.remove("is-open");
   cleanScrImgModal();
 }
